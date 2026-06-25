@@ -1,4 +1,4 @@
 # Un contador web simple
 
 ## Nota
-Este  es un repositorio deprueba para Github Pages
+Este  es un repositorio de prueba para Github Pages
