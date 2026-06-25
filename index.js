@@ -1,32 +1,32 @@
-class Contador {
-    constructor(elemento) {
-        this.elemento = elemento;
-        this.contador = Number(localStorage.getItem('contador')) || 0;
-        this.iniciar();
+class Counter {
+    constructor(element) {
+        this.element = element;
+        this.count = Number(localStorage.getItem('count')) || 0;
+        this.init();
     }
 
-    sumar = () => {
-        this.contador += 5;
-        this.elemento.textContent = this.contador;
-        localStorage.setItem('contador', this.contador);
+    increment = () => {
+        this.count += 5;
+        this.element.textContent = this.count;
+        localStorage.setItem('count', this.count);
     }
 
-    restar = () => {
-        this.contador -= 5;
-        this.elemento.textContent = this.contador;
-        localStorage.setItem('contador', this.contador);
+    decrement = () => {
+        this.count -= 5;
+        this.element.textContent = this.count;
+        localStorage.setItem('count', this.count);
     }
 
-    iniciar = () => {
-        this.elemento.textContent = this.contador;
+    init = () => {
+        this.element.textContent = this.count;
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
-                this.sumar();
+                this.increment();
             } else if (event.code === 'Delete') {
-                this.restar();
+                this.decrement();
             }
         });
     }
 }
 
-const contador = new Contador(document.getElementById('contador'));
+const counter = new Counter(document.getElementById('counter'));
